@@ -1,0 +1,15 @@
+﻿document.writeln("<table align=\'center\' border=\'0\' width=\'800px\' >");
+document.writeln("  <tr>");
+document.writeln("  <td align=\'left\' width=\'100\'><img src=\'im/cloud.png\'>云彩天际</td> ");
+document.writeln("  <td align=\'left\' ><link rel=\'stylesheet\' id=\'showtime\' href=\'css/showtime.css\' />");
+document.writeln("  <div class=\'showtime\'><script src=\'js/time.js\'></script></div>");
+document.writeln("  <td align=\'right\' ><a href=\'http://m.sxso.cn/\' target=\'_blank\'>手机</a>&nbsp;<a href=\'http://b.sxso.cn/\' target=\'_blank\'>论坛</a></td>");
+document.writeln("  </tr>");
+document.writeln("</table>");
+document.writeln("<caption>&nbsp;");
+document.writeln("</caption>");
+document.writeln("<table width=\'1024\' border=\'0\' align=\'center\'>");
+document.writeln("  <tr>");
+document.writeln("    <td><div align=\'left\' ><marquee>欢迎进入<font color=\'#FF0000\'>云</font><font color=\'#BF0040\'>彩</font><font color=\'#7F0080\'>天</font><font color=\'#3F00C0\'>际</font>个人分享站!</marquee></div></td> ");
+document.writeln("  </tr>");
+document.writeln("</table>");
