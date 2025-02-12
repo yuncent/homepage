@@ -37,7 +37,7 @@ document.writeln("    <td><a href=\'https://cloud.tencent.com/\' target=\'_blank
 document.writeln("    <td><a href=\'https://www.aliyun.com/\' target=\'_blank\'>阿里云</a></td>");
 document.writeln("    <td><a href=\'https://www.yisu.com//\' target=\'_blank\'>亿速云</a></td>");
 document.writeln("    <td><a href=\'https://www.lanzou.com/\' target=\'_blank\'>蓝奏网盘</a></td>");
-document.writeln("    <td><a href=\'https://www.123pan.com/\' target=\'_blank\'>123网盘</a></td>");
+document.writeln("    <td><a href=\'https://wormhole.app/\' target=\'_blank\'>虫洞中转</a></td>");
 document.writeln("    <td><a href=\'https://www.aliyundrive.com/\' target=\'_blank\'>阿里网盘</a></td>");
 document.writeln("  </tr>");
 document.writeln("  <tr style=\'text-align:left;\'>");
