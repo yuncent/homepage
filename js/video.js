@@ -34,7 +34,7 @@ document.writeln("<body>");
 document.writeln("");
 document.writeln("<div class=\'video-container\'>");
 document.writeln("  <div class=\'video-wrapper\'>");
-document.writeln("    <a href=\'www.sxso.cn/\'>");
+document.writeln("    <a href=\'https://www.sxso.cn/\'>");
 document.writeln("      <video src=\'im/helloworld.mp4\' title=\'欢迎进入云彩天际网站\' autoplay muted loop></video>");
 document.writeln("    </a>");
 document.writeln("  </div>");
