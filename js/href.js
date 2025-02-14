@@ -69,12 +69,5 @@ document.writeln("    <td><a href=\'https://www.pcauto.com.cn/\' target=\'_blank
 document.writeln("  </tr>");
 document.writeln("</table>");
 document.writeln("<p>&nbsp;</p>");
-document.writeln("<p>&nbsp;</p>");
-document.writeln("<p>&nbsp;</p>");
-document.writeln("<p>&nbsp;</p>");
-document.writeln("<p>&nbsp;</p>");
 document.writeln("<div style=\'text-align:center;font-size:0;\'>");
-
 document.writeln("</div>");
-document.writeln("<p>&nbsp;</p>");
-document.writeln("");
