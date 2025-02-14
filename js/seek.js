@@ -78,7 +78,7 @@ document.writeln("<body>");
 document.writeln("");
 document.writeln("<div class=\'search-container\'>");
 document.writeln("    <div class=\'search-box\'>");
-document.writeln("        <div class=\'icon\' id=\'search-icon\' style=\'background-image: url(\'IM/baidu.ico\');\'></div>");
+document.writeln("        <div class=\'icon\' id=\'search-icon\' style=\'background-image: url(\'IM/ss/baidu.ico\');\'></div>");
 document.writeln("        <input type=\'text\' id=\'search-input\' placeholder=\'请输入搜索内容\'>");
 document.writeln("        <select id=\'search-engine\'>");
 document.writeln("            <option value=\'https://www.baidu.com/s?wd=\' data-url=\'https://www.baidu.com\'>百度</option>");
