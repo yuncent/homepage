@@ -1,0 +1,15 @@
+﻿table a {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+table a:hover {
+  transform: scale(1.2);
+  color: blue;
+}
+
+table a:focus {
+  outline: none;
+}

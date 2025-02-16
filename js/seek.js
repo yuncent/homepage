@@ -1,148 +1,192 @@
-document.writeln("<!DOCTYPE html>");
-document.writeln("<html>");
-document.writeln("<head>");
-document.writeln("    <title>搜索框示例</title>");
-document.writeln("    <style>");
-document.writeln("        /* 搜索框容器样式 */");
-document.writeln("        .search-container {");
-document.writeln("            text-align: center;");
-document.writeln("            margin: 20px auto;");
-document.writeln("            max-width: 600px;");
-document.writeln("        }");
-document.writeln("");
-document.writeln("        /* 搜索框样式 */");
-document.writeln("        .search-box {");
-document.writeln("            display: flex;");
-document.writeln("            justify-content: center;");
-document.writeln("            align-items: stretch; /* 确保所有子元素高度一致 */");
-document.writeln("        }");
-document.writeln("");
-document.writeln("        /* 搜索引擎图标 */");
-document.writeln("        .icon {");
-document.writeln("            width: 40px;");
-document.writeln("            height: 40px;");
-document.writeln("            background-size: cover;");
-document.writeln("            background-position: center;");
-document.writeln("            border: 1px solid #ccc;");
-document.writeln("            border-right: none; /* 去掉右侧边框，与输入框无缝衔接 */");
-document.writeln("            border-radius: 5px 0 0 5px;");
-document.writeln("            box-sizing: border-box; /* 确保边框包含在高度内 */");
-document.writeln("            cursor: pointer; /* 设置鼠标指针为手型 */");
-document.writeln("        }");
-document.writeln("");
-document.writeln("        /* 输入框 */");
-document.writeln("        .search-box input[type=\'text\'] {");
-document.writeln("            width: 300px;");
-document.writeln("            padding: 10px;");
-document.writeln("            font-size: 16px;");
-document.writeln("            border: 1px solid #ccc;");
-document.writeln("            border-left: none; /* 去掉左侧边框，与图标无缝衔接 */");
-document.writeln("            border-right: none; /* 去掉右侧边框，与选择框无缝衔接 */");
-document.writeln("            outline: none;");
-document.writeln("            box-sizing: border-box; /* 确保边框和内边距包含在高度内 */");
-document.writeln("            height: 40px; /* 固定高度 */");
-document.writeln("        }");
-document.writeln("");
-document.writeln("        /* 选择框 */");
-document.writeln("        .search-box select {");
-document.writeln("            padding: 10px;");
-document.writeln("            font-size: 16px;");
-document.writeln("            border: 1px solid #ccc; /* 保留完整的边框 */");
-document.writeln("            border-right: none; /* 去掉右侧边框，与按钮无缝衔接 */");
-document.writeln("            background-color: #fff;");
-document.writeln("            cursor: pointer;");
-document.writeln("            box-sizing: border-box; /* 确保边框包含在高度内 */");
-document.writeln("            height: 40px; /* 固定高度 */");
-document.writeln("        }");
-document.writeln("");
-document.writeln("        /* 按钮 */");
-document.writeln("        .search-box button {");
-document.writeln("            padding: 10px 20px;");
-document.writeln("            font-size: 16px;");
-document.writeln("            background-color: #0073e6;");
-document.writeln("            color: #fff;");
-document.writeln("            border: none;");
-document.writeln("            border-radius: 0 5px 5px 0;");
-document.writeln("            cursor: pointer;");
-document.writeln("            box-sizing: border-box; /* 确保内边距包含在高度内 */");
-document.writeln("            height: 40px; /* 固定高度 */");
-document.writeln("        }");
-document.writeln("");
-document.writeln("        /* 按钮悬停效果 */");
-document.writeln("        .search-box button:hover {");
-document.writeln("            background-color: #005bb5;");
-document.writeln("        }");
-document.writeln("    </style>");
-document.writeln("</head>");
-document.writeln("<body>");
-document.writeln("");
-document.writeln("<div class=\'search-container\'>");
-document.writeln("    <div class=\'search-box\'>");
-document.writeln("        <div class=\'icon\' id=\'search-icon\' style=\'background-image: url(\'IM/ss/baidu.ico\');\'></div>");
-document.writeln("        <input type=\'text\' id=\'search-input\' placeholder=\'请输入搜索内容\'>");
-document.writeln("        <select id=\'search-engine\'>");
-document.writeln("            <option value=\'https://www.baidu.com/s?wd=\' data-url=\'https://www.baidu.com\'>百度</option>");
-document.writeln("            <option value=\'https://www.google.com/search?q=\' data-url=\'https://www.google.com\'>Google</option>");
-document.writeln("            <option value=\'https://www.bing.com/search?q=\' data-url=\'https://www.bing.com\'>Bing</option>");
-document.writeln("        </select>");
-document.writeln("        <button id=\'search-button\'>搜索一下</button>");
-document.writeln("    </div>");
-document.writeln("</div>");
-document.writeln("");
-document.writeln("<script>");
-document.writeln("    // 搜索引擎图标映射");
-document.writeln("    const engineIcons = {");
-document.writeln("        \'https://www.baidu.com/s?wd=\': \'im/ss/baidu.ico\',");
-document.writeln("        \'https://www.google.com/search?q=\': \'im/ss/google.ico\',");
-document.writeln("        \'https://www.bing.com/search?q=\': \'im/ss/bing.ico\'");
-document.writeln("    };");
-document.writeln("");
-document.writeln("    // 页面加载时设置默认图标");
-document.writeln("    window.onload = function () {");
-document.writeln("        const searchEngineSelect = document.getElementById(\'search-engine\');");
-document.writeln("        const selectedEngine = searchEngineSelect.value;");
-document.writeln("");
-document.writeln("        // 设置默认图标");
-document.writeln("        document.getElementById(\'search-icon\').style.backgroundImage = `url(\'${engineIcons[selectedEngine]}\')`;");
-document.writeln("    };");
-document.writeln("");
-document.writeln("    // 监听搜索引擎选择变化");
-document.writeln("    document.getElementById(\'search-engine\').addEventListener(\'change\', function () {");
-document.writeln("        const selectedEngine = this.value;");
-document.writeln("");
-document.writeln("        // 更新图标背景图片");
-document.writeln("        document.getElementById(\'search-icon\').style.backgroundImage = `url(\'${engineIcons[selectedEngine]}\')`;");
-document.writeln("    });");
-document.writeln("");
-document.writeln("    // 搜索功能");
-document.writeln("    function performSearch() {");
-document.writeln("        const searchInput = document.getElementById(\'search-input\').value;");
-document.writeln("        const searchEngine = document.getElementById(\'search-engine\').value;");
-document.writeln("        if (searchInput.trim() !== \'\') {");
-document.writeln("            window.open(searchEngine + encodeURIComponent(searchInput), \'_blank\');");
-document.writeln("        } else {");
-document.writeln("            alert(\'请输入搜索内容！\');");
-document.writeln("        }");
-document.writeln("    }");
-document.writeln("");
-document.writeln("    // 绑定搜索按钮点击事件");
-document.writeln("    document.getElementById(\'search-button\').addEventListener(\'click\', performSearch);");
-document.writeln("");
-document.writeln("    // 回车键触发搜索");
-document.writeln("    document.getElementById(\'search-input\').addEventListener(\'keypress\', function (e) {");
-document.writeln("        if (e.key === \'Enter\') {");
-document.writeln("            performSearch();");
-document.writeln("        }");
-document.writeln("    });");
-document.writeln("");
-document.writeln("    // 搜索图标点击事件");
-document.writeln("    document.getElementById(\'search-icon\').addEventListener(\'click\', function () {");
-document.writeln("        const searchEngineSelect = document.getElementById(\'search-engine\');");
-document.writeln("        const selectedOption = searchEngineSelect.options[searchEngineSelect.selectedIndex];");
-document.writeln("        const engineUrl = selectedOption.getAttribute(\'data-url\');");
-document.writeln("        window.open(engineUrl, \'_blank\');");
-document.writeln("    });");
-document.writeln("</script>");
-document.writeln("");
-document.writeln("</body>");
-document.writeln("</html>");
+﻿// 动态创建HTML结构
+(function () {
+    // 创建HTML元素
+    const html = document.implementation.createHTMLDocument('搜索框示例');
+
+    // 创建样式
+    const style = html.createElement('style');
+    style.textContent = `
+        /* 搜索框容器样式 */
+        .search-container {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        /* 搜索框样式 */
+        .search-box {
+            display: flex;
+            justify-content: center;
+            align-items: stretch; /* 确保所有子元素高度一致 */
+        }
+
+        /* 搜索引擎图标 */
+        .icon {
+            width: 40px;
+            height: 40px;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #ccc;
+            border-right: none; /* 去掉右侧边框，与输入框无缝衔接 */
+            border-radius: 5px 0 0 5px;
+            box-sizing: border-box; /* 确保边框包含在高度内 */
+            cursor: pointer; /* 设置鼠标指针为手型 */
+        }
+
+        /* 输入框 */
+        .search-box input[type='text'] {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-left: none; /* 去掉左侧边框，与图标无缝衔接 */
+            border-right: none; /* 去掉右侧边框，与选择框无缝衔接 */
+            outline: none;
+            box-sizing: border-box; /* 确保边框和内边距包含在高度内 */
+            height: 40px; /* 固定高度 */
+        }
+
+        /* 选择框 */
+        .search-box select {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc; /* 保留完整的边框 */
+            border-right: none; /* 去掉右侧边框，与按钮无缝衔接 */
+            background-color: #fff;
+            cursor: pointer;
+            box-sizing: border-box; /* 确保边框包含在高度内 */
+            height: 40px; /* 固定高度 */
+        }
+
+        /* 按钮 */
+        .search-box button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #0073e6;
+            color: #fff;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            box-sizing: border-box; /* 确保内边距包含在高度内 */
+            height: 40px; /* 固定高度 */
+        }
+
+        /* 按钮悬停效果 */
+        .search-box button:hover {
+            background-color: #005bb5;
+        }
+    `;
+    html.head.appendChild(style);
+
+    // 创建搜索框容器
+    const searchContainer = html.createElement('div');
+    searchContainer.className = 'search-container';
+
+    // 创建搜索框
+    const searchBox = html.createElement('div');
+    searchBox.className = 'search-box';
+
+    // 创建图标
+    const icon = html.createElement('div');
+    icon.id = 'search-icon';
+    icon.style.backgroundImage = "url('im/ss/baidu.ico')";
+    icon.className = 'icon';
+    searchBox.appendChild(icon);
+
+    // 创建输入框
+    const input = html.createElement('input');
+    input.type = 'text';
+    input.id = 'search-input';
+    input.placeholder = '请输入搜索内容';
+    searchBox.appendChild(input);
+
+    // 创建选择框
+    const select = html.createElement('select');
+    select.id = 'search-engine';
+    const engines = [
+        { value: 'https://www.baidu.com/s?wd=', url: 'https://www.baidu.com', name: '百度' },
+        { value: 'https://www.google.com/search?q=', url: 'https://www.google.com', name: 'Google' },
+        { value: 'https://www.bing.com/search?q=', url: 'https://www.bing.com', name: 'Bing' }
+    ];
+    engines.forEach(engine => {
+        const option = html.createElement('option');
+        option.value = engine.value;
+        option.setAttribute('data-url', engine.url);
+        option.textContent = engine.name;
+        select.appendChild(option);
+    });
+    searchBox.appendChild(select);
+
+    // 创建按钮
+    const button = html.createElement('button');
+    button.id = 'search-button';
+    button.textContent = '搜索一下';
+    searchBox.appendChild(button);
+
+    // 将搜索框添加到容器
+    searchContainer.appendChild(searchBox);
+
+    // 将容器添加到body
+    html.body.appendChild(searchContainer);
+
+    // 替换当前文档
+    document.open();
+    document.write(html.documentElement.outerHTML);
+    document.close();
+
+    // 搜索引擎图标映射
+    const engineIcons = {
+        'https://www.baidu.com/s?wd=': 'im/ss/baidu.ico',
+        'https://www.google.com/search?q=': 'im/ss/google.ico',
+        'https://www.bing.com/search?q=': 'im/ss/bing.ico'
+    };
+
+    // 更新图标函数
+    function updateIcon(engineUrl) {
+        const iconElement = document.getElementById('search-icon');
+        iconElement.style.backgroundImage = `url('${engineIcons[engineUrl]}')`;
+    }
+
+    // 页面加载时设置默认图标
+    window.onload = function () {
+        const searchEngineSelect = document.getElementById('search-engine');
+        const selectedEngine = searchEngineSelect.value;
+        updateIcon(selectedEngine);
+    };
+
+    // 监听搜索引擎选择变化
+    document.getElementById('search-engine').addEventListener('change', function () {
+        const selectedEngine = this.value;
+        updateIcon(selectedEngine);
+    });
+
+    // 搜索功能
+    function performSearch() {
+        const searchInput = document.getElementById('search-input').value;
+        const searchEngine = document.getElementById('search-engine').value;
+
+        if (searchInput.trim() !== '') {
+            window.open(searchEngine + encodeURIComponent(searchInput), '_blank');
+        } else {
+            alert('请输入搜索内容！');
+        }
+    }
+
+    // 绑定搜索按钮点击事件
+    document.getElementById('search-button').addEventListener('click', performSearch);
+
+    // 回车键触发搜索
+    document.getElementById('search-input').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            performSearch();
+        }
+    });
+
+    // 搜索图标点击事件
+    document.getElementById('search-icon').addEventListener('click', function () {
+        const searchEngineSelect = document.getElementById('search-engine');
+        const selectedOption = searchEngineSelect.options[searchEngineSelect.selectedIndex];
+        const engineUrl = selectedOption.getAttribute('data-url');
+        window.open(engineUrl, '_blank');
+    });
+})();

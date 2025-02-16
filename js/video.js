@@ -1,50 +1,80 @@
-document.writeln("<style>");
-document.writeln("  .video-container {");
-document.writeln("    display: flex;");
-document.writeln("    justify-content: center; /* 水平居中 */");
-document.writeln("    align-items: center;     /* 垂直居中 */");
-document.writeln("    width: 1024px;          /* 设置容器宽度 */");
-document.writeln("    margin: 0 auto;         /* 页面居中 */");
-document.writeln("  }");
-document.writeln("");
-document.writeln("  .video-wrapper {");
-document.writeln("    width: 480px;          /* 视频宽度 */");
-document.writeln("    height: 309px;         /* 视频高度 */");
-document.writeln("    position: relative;   /* 用于定位链接 */");
-document.writeln("  }");
-document.writeln("");
-document.writeln("  .video-wrapper video {");
-document.writeln("    width: 100%;");
-document.writeln("    height: 100%;");
-document.writeln("    display: block;");
-document.writeln("    mix-blend-mode: screen;");
-document.writeln("  }");
-document.writeln("");
-document.writeln("  .video-wrapper a {");
-document.writeln("    position: absolute;");
-document.writeln("    top: 0;");
-document.writeln("    left: 0;");
-document.writeln("    width: 100%;");
-document.writeln("    height: 100%;");
-document.writeln("    display: block;");
-document.writeln("  }");
-document.writeln("</style>");
-document.writeln("</head>");
-document.writeln("<body>");
-document.writeln("");
-document.writeln("<div class=\'video-container\'>");
-document.writeln("  <div class=\'video-wrapper\'>");
-document.writeln("    <a href=\'https://www.sxso.cn/\'>");
-document.writeln("      <video src=\'im/helloworld.mp4\' title=\'欢迎进入云彩天际网站\' autoplay muted loop></video>");
-document.writeln("    </a>");
-document.writeln("  </div>");
-document.writeln("</div>");
-document.writeln("");
-document.writeln("<script>");
-document.writeln("  document.addEventListener(\'DOMContentLoaded\', function() {");
-document.writeln("    const video = document.querySelector(\'video\');");
-document.writeln("    video.addEventListener(\'contextmenu\', function(event) {");
-document.writeln("      event.preventDefault();");
-document.writeln("    });");
-document.writeln("  });");
-document.writeln("</script>");
+﻿(function addStyles() {
+  const style = document.createElement('style');
+  style.innerHTML = `
+    .video-container {
+      text-align: center;      /* 水平居中 */
+      width: 100%;             /* 占据父容器的宽度 */
+      max-width: 1024px;       /* 最大宽度限制 */
+      margin: 0 auto;          /* 页面水平居中 */
+      padding: 0;              /* 移除内边距 */
+    }
+
+    .video-wrapper {
+      display: inline-block;   /* 让 .video-wrapper 成为行内块级元素 */
+      width: 480px;            /* 保持原宽度 */
+      height: 309px;           /* 保持原高度 */
+      position: relative;      /* 用于定位子元素 */
+    }
+
+    .video-wrapper video {
+      width: 100%;             /* 视频宽度占满父容器 */
+      height: 100%;            /* 视频高度占满父容器 */
+      display: block;
+      mix-blend-mode: screen;
+    }
+
+    .video-wrapper a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  `;
+  document.head.appendChild(style);
+})();
+
+// 动态生成视频容器并插入到指定位置
+document.addEventListener('DOMContentLoaded', function () {
+  // 创建视频容器
+  const videoContainer = document.createElement('div');
+  videoContainer.className = 'video-container';
+
+  // 创建视频包装器
+  const videoWrapper = document.createElement('div');
+  videoWrapper.className = 'video-wrapper';
+
+  // 创建超链接
+  const link = document.createElement('a');
+  link.href = 'https://www.ssxx.fun/';
+
+  // 创建视频元素
+  const video = document.createElement('video');
+  video.src = 'im/helloworld.mp4'; // 确保此路径正确
+  video.title = '欢迎进入云彩天际网站';
+  video.autoplay = true;
+  video.muted = true;
+  video.loop = true;
+
+  // 禁用视频右键菜单
+  video.addEventListener('contextmenu', function (event) {
+    event.preventDefault();
+  });
+
+  // 组装结构
+  link.appendChild(video);
+  videoWrapper.appendChild(link);
+  videoContainer.appendChild(videoWrapper);
+
+  // 找到 <script src="js/seek.js"></script> 元素
+  const targetScript = Array.from(document.scripts).find(script => script.src.includes('js/seek.js'));
+
+  if (targetScript) {
+    // 将视频容器插入到 <script src="js/seek.js"></script> 元素之前
+    targetScript.parentNode.insertBefore(videoContainer, targetScript);
+  } else {
+    // 如果没有找到目标脚本，则将视频容器添加到 body 的末尾
+    document.body.appendChild(videoContainer);
+  }
+});
