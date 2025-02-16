@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 创建超链接
   const link = document.createElement('a');
-  link.href = 'https://www.ssxx.fun/';
+  link.href = 'https://www.sxso.cn/';
 
   // 创建视频元素
   const video = document.createElement('video');
