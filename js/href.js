@@ -1,4 +1,4 @@
-﻿function createWebsiteTable() {
+function createWebsiteTable() {
   const table = document.createElement('table');
   table.style.width = '888px';
   table.style.border = '0';
@@ -64,7 +64,7 @@
         { text: '游侠网', href: 'https://www.ali213.net/' },
         { text: '游民星空', href: 'https://www.gamersky.com/' },
         { text: 'NGA论坛', href: 'https://bbs.nga.cn/' },
-        { text: '中关村', href: 'https://www.zol.com.cn/' },
+        { text: 'IT之家', href: 'https://www.ithome.com/' },
         { text: '蓝点网', href: 'https://www.landiannews.com/' },
       ],
     },
@@ -90,6 +90,17 @@
         { text: '太平洋汽车', href: 'https://www.pcauto.com.cn/' },
       ],
     },
+    {
+      name: 'AI',
+      links: [
+        { text: '通义千问', href: 'https://tongyi.aliyun.com/' },
+        { text: '腾讯元宝', href: 'https://yuanbao.tencent.com/' },
+        { text: 'OpenAI', href: 'https://openai.com/' },
+        { text: 'DeepSeek', href: 'https://www.deepseek.com/' },
+        { text: 'Gemini', href: 'https://gemini.google.com/' },
+        { text: 'Ollama', href: 'https://ollama.com/' },
+      ],
+    },            
   ];
 
   categories.forEach((category) => {
