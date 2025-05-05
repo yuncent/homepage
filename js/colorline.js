@@ -5,15 +5,15 @@ function createHtml() {
     <table align="center" border="0" width="800px">
       <tr>
         <td align="left" width="100">
-          <img src="im/cloud.png" alt="云彩天际">云彩天际
+          <img src="im/cloud.png" alt="云彩天际" width="30" height="20" style="vertical-align: bottom;">云彩天际
         </td>
         <td align="left">
           <link rel="stylesheet" id="showtime" href="css/showtime.css">
           <div class="showtime"></div>
         </td>
         <td align="right">
-          <a href="http://m.sxso.cn/" target="_blank">手机</a>
-          <a href="http://b.sxso.cn/" target="_blank">论坛</a>
+          <a href="http://m.yuncent.cn/" target="_blank">手机</a>
+          <a href="http://b.yuncent.cn/" target="_blank">论坛</a>
         </td>
       </tr>
     </table>
