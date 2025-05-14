@@ -12,8 +12,8 @@ function createHtml() {
           <div class="showtime"></div>
         </td>
         <td align="right">
-          <a href="http://m.yuncent.cn/" target="_blank">手机</a>
-          <a href="http://b.yuncent.cn/" target="_blank">论坛</a>
+          <a href="http://m.sosxs.com/" target="_blank">手机</a>
+          <a href="http://b.sosxs.com/" target="_blank">论坛</a>
         </td>
       </tr>
     </table>
